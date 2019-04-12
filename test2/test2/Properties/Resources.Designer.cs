@@ -213,6 +213,36 @@ namespace test2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap btnSkyA {
+            get {
+                object obj = ResourceManager.GetObject("btnSkyA", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btnSkyB {
+            get {
+                object obj = ResourceManager.GetObject("btnSkyB", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btnSkyC {
+            get {
+                object obj = ResourceManager.GetObject("btnSkyC", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap btnSkyDel {
             get {
                 object obj = ResourceManager.GetObject("btnSkyDel", resourceCulture);
@@ -226,6 +256,26 @@ namespace test2.Properties {
         internal static System.Drawing.Bitmap btnSkyEnt {
             get {
                 object obj = ResourceManager.GetObject("btnSkyEnt", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btnSkyNG {
+            get {
+                object obj = ResourceManager.GetObject("btnSkyNG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btnSkyOK {
+            get {
+                object obj = ResourceManager.GetObject("btnSkyOK", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

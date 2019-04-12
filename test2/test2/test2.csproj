@@ -229,6 +229,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\btnSkyOK.png" />
+    <None Include="Resources\btnSkyNG.png" />
+    <None Include="Resources\btnSkyC.png" />
+    <None Include="Resources\btnSkyB.png" />
+    <None Include="Resources\btnSkyA.png" />
     <None Include="Resources\btnSkyEnt.png" />
     <None Include="Resources\btnSkyDel.png" />
     <None Include="Resources\btnSky9.png" />
