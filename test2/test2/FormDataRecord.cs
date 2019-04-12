@@ -399,13 +399,10 @@ namespace test2
                 MessageBox.Show("Please Input Before.");
                 textBoxKanaB.Focus();
             }
-            else if (textBoxKanaA.Text.Trim() == "")
+            else if (textBoxKanaA.Text.Trim() == "" && textBoxKanaB.Text != "A")
             {
-                if (textBoxKanaB.Text != "A")
-                {
                     MessageBox.Show("Please Input After.");
                     textBoxKanaA.Focus();
-                }
             }
             else if (textBox1SKana.Text.Trim() == "")
             {
@@ -413,13 +410,10 @@ namespace test2
                 MessageBox.Show("Please Input 1 Shot Kanagata.");
                 textBox1SKana.Focus();
             }
-            else if (textBox1SAdj.Text.Trim() == "")
+            else if (textBox1SAdj.Text.Trim() == "" && textBox1SKana.Text != "A")
             {
-                if (textBox1SKana.Text != "A")
-                {
                     MessageBox.Show("Please Input 1 Shot Adjust.");
                     textBox1SAdj.Focus();
-                }
             }
             else if (textBoxJigChk.Text.Trim() == "")
             {
@@ -433,13 +427,11 @@ namespace test2
                 MessageBox.Show("Please Input 1 Shot Kanagata.");
                 textBoxVisualChk.Focus();
             }
-            else if (textBoxVisualAdj.Text.Trim() == "")
+            else if (textBoxVisualAdj.Text.Trim() == "" && textBoxVisualChk.Text != "A")
             {
-                if (textBoxVisualChk.Text != "A")
-                {
                     MessageBox.Show("Please Input Visual Check Adlust :.");
                     textBoxVisualAdj.Focus();
-                }
+                
             }
             else if (textBoxTotalNG.Text == "")
             {
@@ -482,14 +474,18 @@ namespace test2
                 DataQR.MarkerK = int.Parse(textBoxK.Text);
                 DataQR.MekaNG = int.Parse(textBoxMekaNG.Text);
                 DataQR.MissingIC = int.Parse(textBoxIC.Text);
+                int totalGood = int.Parse(DataQR.InputQty) - int.Parse(DataQR.TotalNg);
+                DataQR.TotalGood = totalGood.ToString();
 
                 DialogResult = DialogResult.OK;
             }
+            FormEmpEnd formEmpEnd = new FormEmpEnd(DataQR);
+            DialogResult result = formEmpEnd.ShowDialog();
         }
 
         private void button22_Click(object sender, EventArgs e)
         {
-            return;
+            DialogResult = DialogResult.No;
         }
     }
 }

@@ -53,7 +53,7 @@ namespace test2
                     DataQR.PackageName = textBoxScanQr.Text.Substring(0, 10);
                     DataQR.LotSetting = DateTime.Now;//บันทึกค่าลง class
                     DataQR.Ver = Properties.Settings.Default.Version;
-                    DataQR.McNo = Properties.Settings.Default.McType;
+                    DataQR.McType = Properties.Settings.Default.McType;
                     
                     FormScanEmp scanEmp = new FormScanEmp(DataQR);
                     DialogResult result = scanEmp.ShowDialog();
@@ -65,10 +65,10 @@ namespace test2
                     DataQR.MarkerK = 0;
                     DataQR.MekaNG = 0;
                     DataQR.MissingIC = 0;
-                    
+
                     webService = new WebServiceAPCS.ServiceiLibraryClient(); //เช็คค่าจากเว็บ SV
                     WebServiceAPCS.SetupLotResult setupLot = webService.SetupLot(DataQR.LotNo, DataQR.McNo, DataQR.EmpNo, Properties.Settings.Default.ProcessName, Properties.Settings.Default.LayNo);
-                    
+
                     if (setupLot.IsPass == WebServiceAPCS.SetupLotResult.Status.NotPass)
                     {
                         MessageDialog.MessageBoxDialog.ShowMessageDialog("Input Lot", setupLot.Cause, setupLot.Type.ToString());
@@ -78,14 +78,17 @@ namespace test2
                         DataQR.LotSetting = null;//บันทึกค่าลง class
                         DataQR.EmpNo = null;
                         DataQR.InputQty = null;
-                        
-                    }else
+
+                    }
+                    else
                     {
                         DataQR.Recipes = setupLot.Recipe;
                         SaveXml(DataQR, AppDomain.CurrentDomain.BaseDirectory + "/xmlData.txt"); //บันทึกข้อมูลลงไฟล์ไบนารี่
                         ClassLog.SaveLog("Click Setting Button", "Lot No.:" + DataQR.LotNo, DataQR.McNo, DataQR.EmpNo);
+                        
+
                     }
-                    
+
                     DialogResult = DialogResult.OK;
                     
                 }

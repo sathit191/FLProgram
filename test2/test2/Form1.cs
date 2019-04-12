@@ -40,49 +40,28 @@ namespace test2
             {
 
                 ShowData(QRData);
-            }
-            //Cleartext();
-            if (QRData.LotNo != null)
-            {
-                // button1.BackColor = Color.Transparent;
                 button1.BackgroundImage = test2.Properties.Resources.input_gray;
                 labelStatus.Text = "Status : Wait Start Lot";
                 button1.Enabled = false;
-                buttonStart.BackColor = Color.DodgerBlue;
+                buttonStart.BackgroundImage = test2.Properties.Resources.Start_blue;
                 buttonStart.Enabled = true;
             }
+            //Cleartext();
+            //if (QRData.LotNo != null)
+            //{
+            //    // button1.BackColor = Color.Transparent;
+            //    button1.BackgroundImage = test2.Properties.Resources.input_gray;
+            //    labelStatus.Text = "Status : Wait Start Lot";
+            //    button1.Enabled = false;
+            //    buttonStart.BackColor = Color.DodgerBlue;
+            //    buttonStart.Enabled = true;
+            //}
         }
 
         private void ShowData(ClassDataQR dataQR)
         {
             classDataQRBindingSource.DataSource = dataQR; //Binding data from class
-
-            if (dataQR.LotStart.HasValue == true) //ค่าว่า วันที่มีค่าหรือไม่ถ้ามีถึงเข้า
-            {
-                this.labelLotStart.DataBindings.Add("text", QRData, "LotStart", true, DataSourceUpdateMode.OnValidation, "", "dd/MM/yyyy HH:mm:ss");
-                //labelLotStart.Text = dataQR.LotStart.Value.ToString("dd/MM/yyyy HH:mm:ss"); //ถ้าแปลงเวลามาเป็นtextใช้ .Value.ToString() เพื่อเวลาเซฟลง database จะได้ค่า null
-            }
-            else
-            {
-                labelLotStart.Text = "-";
-            }
-            if (dataQR.LotClose.HasValue == true) //ค่าว่า วันที่มีค่าหรือไม่ถ้ามีถึงเข้า
-            {
-                this.labelLotClose.DataBindings.Add("text", QRData, "LotClose", true, DataSourceUpdateMode.OnValidation, "", "dd/MM/yyyy HH:mm:ss");
-                //labelLotClose.Text = dataQR.LotClose.Value.ToString("dd/MM/yyyy HH:mm:ss"); //ถ้าแปลงเวลามาเป็นtextใช้ .Value.ToString() เพื่อเวลาเซฟลง database จะได้ค่า null
-            }
-            else
-            {
-                labelLotClose.Text = "-";
-            }
-            if (dataQR.LotSetting.HasValue == true) //ค่าว่า วันที่มีค่าหรือไม่ถ้ามีถึงเข้า
-            {
-                this.labelLotSetting.DataBindings.Add("text", QRData, "LotSetting", true, DataSourceUpdateMode.OnValidation, "", "dd/MM/yyyy HH:mm:ss");
-                //tbSysDateTo.DataBindings.Add("Text", myBindingSource, "SysDateTo", true, DataSourceUpdateMode.OnValidation, "", "dd-MM-yyyy");
-                //labelLotSetting.Text = dataQR.LotSetting.Value.ToString("dd/MM/yyyy HH:mm:ss");
- 
-            }
-
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -131,11 +110,11 @@ namespace test2
 
         private void buttonStart_Click(object sender, EventArgs e)
         {
-            if(textBoxRecipes.Text.Trim() == null)
-            {
-                textBoxRecipes.Focus();
-                return;
-            }
+            //if(textBoxRecipes.Text.Trim() == "")
+            //{
+            //    textBoxRecipes.Focus();
+            //    return;
+            //}
             QRData.LotStart = DateTime.Now;
             QRData.Recipes = textBoxRecipes.Text;
 
@@ -155,7 +134,7 @@ namespace test2
                 SaveXml(QRData, AppDomain.CurrentDomain.BaseDirectory + "/xmlData.txt");
                 ClassLog.SaveLog("Click Start Button", "Lot No.:" + QRData.LotNo, QRData.McNo, QRData.EmpNo + "| InputQty: " + QRData.InputQty);
 
-                ShowData(QRData);
+                classDataQRBindingSource.DataSource = QRData;
 
                 labelStatus.Text = "Status : Lot Running";
                 buttonStart.Enabled = false;
@@ -265,22 +244,7 @@ namespace test2
 
         private void textBoxTotalGood_TextChanged(object sender, EventArgs e)
         {
-            int distance;
 
-            if (int.TryParse(textBoxTotalNG.Text, out distance))
-            {
-                if (int.TryParse(textBoxInputOty.Text, out distance))
-                {
-                    int input = int.Parse(textBoxInputOty.Text);
-                    int good = int.Parse(textBoxTotalNG.Text);
-                    labelTotalGood.Text = (input - good).ToString();
-                }
-            }else
-            {
-                MessageBox.Show("Please Input numeral");
-                textBoxTotalNG.Focus();
-            }
-            
         }
 
         private void buttonLotEnd_Click(object sender, EventArgs e)
@@ -349,33 +313,36 @@ namespace test2
             /////////goto emp end form ///////////////
             ///
 
-            FormEmpEnd formEmpEnd = new FormEmpEnd(QRData);
-            DialogResult result = formEmpEnd.ShowDialog();
+
 
             //check by webserv
-            webService = new WebServiceAPCS.ServiceiLibraryClient();
-            int good = int.Parse(QRData.TotalGood);
-            int ng = int.Parse(QRData.TotalNg);
-            WebServiceAPCS.EndLotResult endLot = webService.EndLot(QRData.LotNo, QRData.McNo, QRData.EmpNoEnd, good, ng);
-
-            if(endLot.IsPass == false)
+            if (resultDatarecode == DialogResult.OK)
             {
-                MessageDialog.MessageBoxDialog.ShowMessageDialog("End Lot", endLot.Cause, endLot.Type.ToString()); //setupLot.Cause, setupLot.Type.ToString()
-                return;
-            }
-            else
-            {
-                //update to database
-               // UpdateSqlData(QRData.McNo, QRData.LotNo, QRData.LotStart);
-                SaveXml(QRData, AppDomain.CurrentDomain.BaseDirectory + "/xmlData.txt"); //update binary file
-                ClassLog.SaveLog("Click Lot End Button", "Lot No.:" + QRData.LotNo, QRData.McNo, QRData.EmpNoEnd + "| Total Good " + QRData.TotalGood + "| Total NG " + QRData.TotalNg);
-                ShowData(QRData);
+                QRData.LotClose = DateTime.Now;
+                webService = new WebServiceAPCS.ServiceiLibraryClient();
+                int good = int.Parse(QRData.TotalGood);
+                int ng = int.Parse(QRData.TotalNg);
+                WebServiceAPCS.EndLotResult endLot = webService.EndLot(QRData.LotNo, QRData.McNo, QRData.EmpNoEnd, good, ng);
 
-                labelStatus.Text = "Status : Wait Input Lot";
-                buttonLotEnd.Enabled = false;
-                buttonLotEnd.BackgroundImage = test2.Properties.Resources.End_gray;
-                button1.Enabled = true;
-                button1.BackgroundImage = test2.Properties.Resources.input_blue;
+                if (endLot.IsPass == false)
+                {
+                    MessageDialog.MessageBoxDialog.ShowMessageDialog("End Lot", endLot.Cause, endLot.Type.ToString()); //setupLot.Cause, setupLot.Type.ToString()
+                    return;
+                }
+                else
+                {
+                    //update to database
+                    // UpdateSqlData(QRData.McNo, QRData.LotNo, QRData.LotStart);
+                    SaveXml(QRData, AppDomain.CurrentDomain.BaseDirectory + "/xmlData.txt"); //update binary file
+                    ClassLog.SaveLog("Click Lot End Button", "Lot No.:" + QRData.LotNo, QRData.McNo, QRData.EmpNoEnd + "| Total Good " + QRData.TotalGood + "| Total NG " + QRData.TotalNg);
+                    ShowData(QRData);
+
+                    labelStatus.Text = "Status : Wait Input Lot";
+                    buttonLotEnd.Enabled = false;
+                    buttonLotEnd.BackgroundImage = test2.Properties.Resources.End_gray;
+                    button1.Enabled = true;
+                    button1.BackgroundImage = test2.Properties.Resources.input_blue;
+                }
             }
             
 
@@ -520,6 +487,11 @@ namespace test2
         {
             FormDataRecord formDataRecord = new FormDataRecord(QRData);
             DialogResult result = formDataRecord.ShowDialog();
+
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }
