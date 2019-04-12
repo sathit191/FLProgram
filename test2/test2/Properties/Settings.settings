@@ -1,0 +1,29 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="test2.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="McNo" Type="System.String" Scope="User">
+      <Value Profile="(Default)">FL-FFL-02</Value>
+    </Setting>
+    <Setting Name="Dbxuser" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=10.28.32.122;Initial Catalog=DBx;User ID=apcsuser;Password=apcsuser&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=10.28.32.122;Initial Catalog=DBx;User ID=apcsuser;Password=apcsuser</Value>
+    </Setting>
+    <Setting Name="Version" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Ver 1.0.0</Value>
+    </Setting>
+    <Setting Name="McType" Type="System.String" Scope="User">
+      <Value Profile="(Default)">FICO_FCL</Value>
+    </Setting>
+    <Setting Name="ProcessName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">FL</Value>
+    </Setting>
+    <Setting Name="LayNo" Type="System.String" Scope="User">
+      <Value Profile="(Default)">075</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
