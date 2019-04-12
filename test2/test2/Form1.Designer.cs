@@ -57,11 +57,6 @@
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.panelNG = new System.Windows.Forms.Panel();
-            this.textBoxIC = new System.Windows.Forms.TextBox();
-            this.textBoxMekaNG = new System.Windows.Forms.TextBox();
-            this.textBoxK = new System.Windows.Forms.TextBox();
-            this.textBoxM = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label12 = new System.Windows.Forms.Label();
@@ -87,6 +82,13 @@
             this.mcNoToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.fillBy1ToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.fLDataTableAdapter = new test2.DBxDataSetTableAdapters.FLDataTableAdapter();
+            this.button2 = new System.Windows.Forms.Button();
+            this.classDataQRBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.panelNG = new System.Windows.Forms.Panel();
+            this.textBoxIC = new System.Windows.Forms.TextBox();
+            this.textBoxMekaNG = new System.Windows.Forms.TextBox();
+            this.textBoxK = new System.Windows.Forms.TextBox();
+            this.textBoxM = new System.Windows.Forms.TextBox();
             this.buttonLotEnd = new System.Windows.Forms.Button();
             this.buttonStart = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -97,10 +99,7 @@
             this.pMRepairingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fLDataBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.button2 = new System.Windows.Forms.Button();
-            this.classDataQRBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
-            this.panelNG.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -109,9 +108,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.fLDataBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dBxDataSet)).BeginInit();
             this.fillBy1ToolStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.classDataQRBindingSource)).BeginInit();
+            this.panelNG.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fLDataBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.classDataQRBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -303,11 +303,11 @@
             // 
             // textBoxTotalNG
             // 
-            this.textBoxTotalNG.Enabled = false;
             this.textBoxTotalNG.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxTotalNG.ForeColor = System.Drawing.Color.Black;
             this.textBoxTotalNG.Location = new System.Drawing.Point(193, 258);
             this.textBoxTotalNG.Name = "textBoxTotalNG";
+            this.textBoxTotalNG.ReadOnly = true;
             this.textBoxTotalNG.Size = new System.Drawing.Size(153, 31);
             this.textBoxTotalNG.TabIndex = 32;
             this.textBoxTotalNG.TextChanged += new System.EventHandler(this.textBoxTotalGood_TextChanged);
@@ -430,59 +430,6 @@
             this.groupBox1.TabIndex = 37;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = ": Operation :";
-            // 
-            // panelNG
-            // 
-            this.panelNG.BackColor = System.Drawing.Color.Transparent;
-            this.panelNG.BackgroundImage = global::test2.Properties.Resources.NG;
-            this.panelNG.Controls.Add(this.textBoxIC);
-            this.panelNG.Controls.Add(this.textBoxMekaNG);
-            this.panelNG.Controls.Add(this.textBoxK);
-            this.panelNG.Controls.Add(this.textBoxM);
-            this.panelNG.Location = new System.Drawing.Point(83, 302);
-            this.panelNG.Name = "panelNG";
-            this.panelNG.Size = new System.Drawing.Size(300, 100);
-            this.panelNG.TabIndex = 35;
-            // 
-            // textBoxIC
-            // 
-            this.textBoxIC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxIC.ForeColor = System.Drawing.Color.Black;
-            this.textBoxIC.Location = new System.Drawing.Point(256, 62);
-            this.textBoxIC.Name = "textBoxIC";
-            this.textBoxIC.Size = new System.Drawing.Size(30, 26);
-            this.textBoxIC.TabIndex = 10;
-            this.textBoxIC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBoxMekaNG
-            // 
-            this.textBoxMekaNG.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxMekaNG.ForeColor = System.Drawing.Color.Black;
-            this.textBoxMekaNG.Location = new System.Drawing.Point(243, 10);
-            this.textBoxMekaNG.Name = "textBoxMekaNG";
-            this.textBoxMekaNG.Size = new System.Drawing.Size(30, 26);
-            this.textBoxMekaNG.TabIndex = 9;
-            this.textBoxMekaNG.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBoxK
-            // 
-            this.textBoxK.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxK.ForeColor = System.Drawing.Color.Black;
-            this.textBoxK.Location = new System.Drawing.Point(97, 66);
-            this.textBoxK.Name = "textBoxK";
-            this.textBoxK.Size = new System.Drawing.Size(30, 26);
-            this.textBoxK.TabIndex = 4;
-            this.textBoxK.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBoxM
-            // 
-            this.textBoxM.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxM.ForeColor = System.Drawing.Color.Black;
-            this.textBoxM.Location = new System.Drawing.Point(21, 66);
-            this.textBoxM.Name = "textBoxM";
-            this.textBoxM.Size = new System.Drawing.Size(30, 26);
-            this.textBoxM.TabIndex = 3;
-            this.textBoxM.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tabControl1
             // 
@@ -705,6 +652,77 @@
             // 
             this.fLDataTableAdapter.ClearBeforeFill = true;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(838, 123);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 44;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
+            // classDataQRBindingSource
+            // 
+            this.classDataQRBindingSource.DataSource = typeof(test2.ClassDataQR);
+            // 
+            // panelNG
+            // 
+            this.panelNG.BackColor = System.Drawing.Color.Transparent;
+            this.panelNG.BackgroundImage = global::test2.Properties.Resources.NG;
+            this.panelNG.Controls.Add(this.textBoxIC);
+            this.panelNG.Controls.Add(this.textBoxMekaNG);
+            this.panelNG.Controls.Add(this.textBoxK);
+            this.panelNG.Controls.Add(this.textBoxM);
+            this.panelNG.Location = new System.Drawing.Point(83, 302);
+            this.panelNG.Name = "panelNG";
+            this.panelNG.Size = new System.Drawing.Size(300, 100);
+            this.panelNG.TabIndex = 35;
+            // 
+            // textBoxIC
+            // 
+            this.textBoxIC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxIC.ForeColor = System.Drawing.Color.Black;
+            this.textBoxIC.Location = new System.Drawing.Point(256, 62);
+            this.textBoxIC.Name = "textBoxIC";
+            this.textBoxIC.ReadOnly = true;
+            this.textBoxIC.Size = new System.Drawing.Size(30, 26);
+            this.textBoxIC.TabIndex = 10;
+            this.textBoxIC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBoxMekaNG
+            // 
+            this.textBoxMekaNG.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxMekaNG.ForeColor = System.Drawing.Color.Black;
+            this.textBoxMekaNG.Location = new System.Drawing.Point(243, 10);
+            this.textBoxMekaNG.Name = "textBoxMekaNG";
+            this.textBoxMekaNG.ReadOnly = true;
+            this.textBoxMekaNG.Size = new System.Drawing.Size(30, 26);
+            this.textBoxMekaNG.TabIndex = 9;
+            this.textBoxMekaNG.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBoxK
+            // 
+            this.textBoxK.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxK.ForeColor = System.Drawing.Color.Black;
+            this.textBoxK.Location = new System.Drawing.Point(97, 66);
+            this.textBoxK.Name = "textBoxK";
+            this.textBoxK.ReadOnly = true;
+            this.textBoxK.Size = new System.Drawing.Size(30, 26);
+            this.textBoxK.TabIndex = 4;
+            this.textBoxK.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBoxM
+            // 
+            this.textBoxM.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxM.ForeColor = System.Drawing.Color.Black;
+            this.textBoxM.Location = new System.Drawing.Point(21, 66);
+            this.textBoxM.Name = "textBoxM";
+            this.textBoxM.ReadOnly = true;
+            this.textBoxM.Size = new System.Drawing.Size(30, 26);
+            this.textBoxM.TabIndex = 3;
+            this.textBoxM.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // buttonLotEnd
             // 
             this.buttonLotEnd.BackColor = System.Drawing.Color.Transparent;
@@ -808,20 +826,6 @@
             // 
             this.fLDataBindingSource1.DataMember = "FLData";
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(838, 123);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 44;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
-            // 
-            // classDataQRBindingSource
-            // 
-            this.classDataQRBindingSource.DataSource = typeof(test2.ClassDataQR);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -847,8 +851,6 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.panelNG.ResumeLayout(false);
-            this.panelNG.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
@@ -859,10 +861,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dBxDataSet)).EndInit();
             this.fillBy1ToolStrip.ResumeLayout(false);
             this.fillBy1ToolStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.classDataQRBindingSource)).EndInit();
+            this.panelNG.ResumeLayout(false);
+            this.panelNG.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fLDataBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.classDataQRBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
