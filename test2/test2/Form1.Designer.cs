@@ -303,6 +303,7 @@
             // 
             // textBoxTotalNG
             // 
+            this.textBoxTotalNG.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.classDataQRBindingSource, "TotalNg", true));
             this.textBoxTotalNG.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxTotalNG.ForeColor = System.Drawing.Color.Black;
             this.textBoxTotalNG.Location = new System.Drawing.Point(193, 258);
@@ -681,6 +682,7 @@
             // 
             // textBoxIC
             // 
+            this.textBoxIC.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.classDataQRBindingSource, "MissingIC", true));
             this.textBoxIC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxIC.ForeColor = System.Drawing.Color.Black;
             this.textBoxIC.Location = new System.Drawing.Point(256, 62);
@@ -692,6 +694,7 @@
             // 
             // textBoxMekaNG
             // 
+            this.textBoxMekaNG.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.classDataQRBindingSource, "MekaNG", true));
             this.textBoxMekaNG.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxMekaNG.ForeColor = System.Drawing.Color.Black;
             this.textBoxMekaNG.Location = new System.Drawing.Point(243, 10);
@@ -703,6 +706,7 @@
             // 
             // textBoxK
             // 
+            this.textBoxK.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.classDataQRBindingSource, "MarkerK", true));
             this.textBoxK.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxK.ForeColor = System.Drawing.Color.Black;
             this.textBoxK.Location = new System.Drawing.Point(97, 66);
@@ -714,6 +718,7 @@
             // 
             // textBoxM
             // 
+            this.textBoxM.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.classDataQRBindingSource, "MarkerM", true));
             this.textBoxM.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxM.ForeColor = System.Drawing.Color.Black;
             this.textBoxM.Location = new System.Drawing.Point(21, 66);
