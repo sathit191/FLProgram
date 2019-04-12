@@ -146,14 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Connected Services\WebServiceAPCS\ServiceiLibrary.wsdl" />
     <None Include="Connected Services\WebServiceAPCS\ServiceiLibrary.xsd">
       <SubType>Designer</SubType>
@@ -219,6 +214,11 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -229,6 +229,28 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\OK_blue.png" />
+    <None Include="Resources\Cancel.png" />
+    <None Include="Resources\numOK_bule.png" />
+    <None Include="Resources\numNG_bule.png" />
+    <None Include="Resources\numC_bule.png" />
+    <None Include="Resources\numB_bule2.png" />
+    <None Include="Resources\numA_bule.png" />
+    <None Include="Resources\numB_bule1.png" />
+    <None Include="Resources\numB_bule.png" />
+    <None Include="Resources\numNG_bule1.png" />
+    <None Include="Resources\numDel_bule.png" />
+    <None Include="Resources\num9_bule.png" />
+    <None Include="Resources\num8_bule.png" />
+    <None Include="Resources\num7_bule.png" />
+    <None Include="Resources\num6_bule.png" />
+    <None Include="Resources\num5_bule.png" />
+    <None Include="Resources\num4_bule.png" />
+    <None Include="Resources\num2_bule.png" />
+    <None Include="Resources\num1_bule.png" />
+    <None Include="Resources\num0_bule.png" />
+    <None Include="Resources\btnnum3_bule.png" />
+    <None Include="Resources\btnEntLong.png" />
     <None Include="Resources\menubar_black1.png" />
     <None Include="Resources\menubar_black.png" />
     <None Include="Resources\menubar3.png" />

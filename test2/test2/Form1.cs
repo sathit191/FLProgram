@@ -21,6 +21,8 @@ namespace test2
 
         public Form1()
         {
+
+
             InitializeComponent();
             QRData = new ClassDataQR();
             labelMcNo.Text = Properties.Settings.Default.McNo;

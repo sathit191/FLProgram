@@ -23,10 +23,11 @@ namespace test2
 
         private void button52_Click(object sender, EventArgs e)
         {
-
-            c_textBoxFocus.Text += button52.Text;
-            c_textBoxFocus.Focus();
-            
+            if (c_textBoxFocus != null)
+            {
+                c_textBoxFocus.Text += "7";
+                c_textBoxFocus.Focus();
+            }
             
         }
 
@@ -59,7 +60,7 @@ namespace test2
             if (textBoxKanaB.Text.Trim() == "")
             {
                 MessageBox.Show("Please Input Before.");
-                textBoxKanaB.Focus();
+               textBoxKanaB.Focus();
                 return;
             }
             else if (textBoxKanaB.Text == "A")
@@ -304,56 +305,83 @@ namespace test2
 
         private void button51_Click(object sender, EventArgs e)
         {
-            c_textBoxFocus.Text += button51.Text;
-            c_textBoxFocus.Focus();
+            if (c_textBoxFocus != null)
+            {
+                c_textBoxFocus.Text += "8";
+                c_textBoxFocus.Focus();
+            }
         }
 
         private void button50_Click(object sender, EventArgs e)
         {
-            c_textBoxFocus.Text += button50.Text;
-            c_textBoxFocus.Focus();
+            if (c_textBoxFocus != null)
+            {
+                c_textBoxFocus.Text += "9";
+                c_textBoxFocus.Focus();
+            }
         }
 
         private void button49_Click(object sender, EventArgs e)
         {
-            c_textBoxFocus.Text += button49.Text;
-            c_textBoxFocus.Focus();
+            if (c_textBoxFocus != null)
+            {
+                c_textBoxFocus.Text += "4";
+                c_textBoxFocus.Focus();
+            }
         }
 
         private void button48_Click(object sender, EventArgs e)
         {
-            c_textBoxFocus.Text += button48.Text;
-            c_textBoxFocus.Focus();
+            if (c_textBoxFocus != null)
+            {
+                c_textBoxFocus.Text += "5";
+                c_textBoxFocus.Focus();
+            }
         }
 
         private void button47_Click(object sender, EventArgs e)
         {
-            c_textBoxFocus.Text += button47.Text;
-            c_textBoxFocus.Focus();
+            if (c_textBoxFocus != null)
+            {
+                c_textBoxFocus.Text += "6";
+                c_textBoxFocus.Focus();
+            }
         }
 
         private void button46_Click(object sender, EventArgs e)
         {
-            c_textBoxFocus.Text += button46.Text;
-            c_textBoxFocus.Focus();
+            if (c_textBoxFocus != null)
+            {
+                c_textBoxFocus.Text += "1";
+                c_textBoxFocus.Focus();
+            }
         }
 
         private void button45_Click(object sender, EventArgs e)
         {
-            c_textBoxFocus.Text += button45.Text;
-            c_textBoxFocus.Focus();
+            if (c_textBoxFocus != null)
+            {
+                c_textBoxFocus.Text += "2";
+                c_textBoxFocus.Focus();
+            }
         }
 
         private void button44_Click(object sender, EventArgs e)
         {
-            c_textBoxFocus.Text += button44.Text;
-            c_textBoxFocus.Focus();
+            if (c_textBoxFocus != null)
+            {
+                c_textBoxFocus.Text += "3";
+                c_textBoxFocus.Focus();
+            }
         }
 
         private void button43_Click(object sender, EventArgs e)
         {
-            c_textBoxFocus.Text += button43.Text;
-            c_textBoxFocus.Focus();
+            if (c_textBoxFocus != null)
+            {
+                c_textBoxFocus.Text += "0";
+                c_textBoxFocus.Focus();
+            }
         }
 
         private void button42_Click(object sender, EventArgs e)
