@@ -229,6 +229,21 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\btnSkyEnt.png" />
+    <None Include="Resources\btnSkyDel.png" />
+    <None Include="Resources\btnSky9.png" />
+    <None Include="Resources\btnSky8.png" />
+    <None Include="Resources\btnSky71.png" />
+    <None Include="Resources\btnSky6.png" />
+    <None Include="Resources\btnSky5.png" />
+    <None Include="Resources\btnSky4.png" />
+    <None Include="Resources\btnSky3.png" />
+    <None Include="Resources\btnSky2.png" />
+    <None Include="Resources\btnSky1.png" />
+    <None Include="Resources\btnSky0.png" />
+    <None Include="Resources\btnSky7.png" />
+    <None Include="Resources\numpad.png" />
+    <None Include="Resources\34c4b1e82882027cf06ecc70ccb50ef7.jpg" />
     <None Include="Resources\numDel_bule1.png" />
     <None Include="Resources\num9_bule1.png" />
     <None Include="Resources\num8_bule1.png" />

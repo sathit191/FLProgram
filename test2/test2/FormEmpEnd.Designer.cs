@@ -182,7 +182,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(34, 86);
+            this.label1.Location = new System.Drawing.Point(34, 92);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(159, 25);
             this.label1.TabIndex = 15;
@@ -192,7 +192,7 @@
             // 
             this.textBox1.BackColor = System.Drawing.Color.White;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(196, 83);
+            this.textBox1.Location = new System.Drawing.Point(196, 89);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(167, 31);
             this.textBox1.TabIndex = 14;
