@@ -229,6 +229,18 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\numDel_bule1.png" />
+    <None Include="Resources\num9_bule1.png" />
+    <None Include="Resources\num8_bule1.png" />
+    <None Include="Resources\num7_bule1.png" />
+    <None Include="Resources\num6_bule1.png" />
+    <None Include="Resources\num5_bule1.png" />
+    <None Include="Resources\num4_bule1.png" />
+    <None Include="Resources\num3_bule.png" />
+    <None Include="Resources\num2_bule1.png" />
+    <None Include="Resources\num1_bule1.png" />
+    <None Include="Resources\num0_bule1.png" />
+    <None Include="Resources\btnEntLong1.png" />
     <None Include="Resources\OK_blue.png" />
     <None Include="Resources\Cancel.png" />
     <None Include="Resources\numOK_bule.png" />
