@@ -98,6 +98,7 @@
             this.pMRepairingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fLDataBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.buttonCancelLot = new System.Windows.Forms.Button();
             this.classDataQRBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             this.panelNG.SuspendLayout();
@@ -719,7 +720,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(917, 126);
+            this.button2.Location = new System.Drawing.Point(917, 75);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 44;
@@ -831,8 +832,24 @@
             // 
             this.fLDataBindingSource1.DataMember = "FLData";
             // 
+            // buttonCancelLot
+            // 
+            this.buttonCancelLot.BackColor = System.Drawing.Color.White;
+            this.buttonCancelLot.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonCancelLot.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCancelLot.ForeColor = System.Drawing.Color.Black;
+            this.buttonCancelLot.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonCancelLot.Location = new System.Drawing.Point(822, 104);
+            this.buttonCancelLot.Name = "buttonCancelLot";
+            this.buttonCancelLot.Size = new System.Drawing.Size(170, 50);
+            this.buttonCancelLot.TabIndex = 45;
+            this.buttonCancelLot.Text = "Cancel Lot";
+            this.buttonCancelLot.UseVisualStyleBackColor = false;
+            this.buttonCancelLot.Click += new System.EventHandler(this.buttonCancelLot_Click);
+            // 
             // classDataQRBindingSource
             // 
+            this.classDataQRBindingSource.AllowNew = false;
             this.classDataQRBindingSource.DataSource = typeof(test2.ClassDataQR);
             // 
             // Form1
@@ -841,6 +858,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1016, 740);
+            this.Controls.Add(this.buttonCancelLot);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.fillBy1ToolStrip);
             this.Controls.Add(this.labelVer);
@@ -955,6 +973,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn totalGoodDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalNGDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonCancelLot;
     }
 }
 

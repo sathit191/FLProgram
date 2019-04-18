@@ -31,9 +31,6 @@ namespace test2
         private void button1_Click(object sender, EventArgs e)
         {
             //chk lot not error to next step.
-
-
-            
             FormSetting formSetting = new FormSetting(QRData);
             DialogResult result = formSetting.ShowDialog(); //ฟังชั่นเพื่อรีเทินค่า Dialog ว่า OK , Close 
             if (result == DialogResult.OK) //เช็คค่า Dialog ที่รีเทินกลับมาว่า Ok หรือไม่ ***ถ้าปิดหน้าต่างฟอม2 จะไม่เข้า loop นี้
@@ -45,6 +42,7 @@ namespace test2
                 button1.Enabled = false;
                 buttonStart.BackgroundImage = test2.Properties.Resources.Start_blue;
                 buttonStart.Enabled = true;
+                buttonCancelLot.Enabled = true;
             }
             //Cleartext();
             //if (QRData.LotNo != null)
@@ -60,7 +58,13 @@ namespace test2
 
         private void ShowData(ClassDataQR dataQR)
         {
-            classDataQRBindingSource.DataSource = dataQR; //Binding data from class
+            classDataQRBindingSource.ResetBindings(true);
+            classDataQRBindingSource.DataSource = QRData; //Binding data from class
+            //classDataQRBindingSource.
+            //if (QRData.LotStart.HasValue)
+            //{
+            //    labelLotStart.Text = QRData.LotStart.Value.ToString("dd/MM/yyyy HH:mm:ss");
+            //}
             
         }
 
@@ -110,11 +114,7 @@ namespace test2
 
         private void buttonStart_Click(object sender, EventArgs e)
         {
-            //if(textBoxRecipes.Text.Trim() == "")
-            //{
-            //    textBoxRecipes.Focus();
-            //    return;
-            //}
+            
             QRData.LotStart = DateTime.Now;
             QRData.Recipes = textBoxRecipes.Text;
 
@@ -130,19 +130,20 @@ namespace test2
             }
             else
             {
-                // InsertSqlData(labelLotNo.Text, labelMcNo.Text,DateTime.Now);
                 SaveXml(QRData, AppDomain.CurrentDomain.BaseDirectory + "/xmlData.txt");
                 ClassLog.SaveLog("Click Start Button", "Lot No.:" + QRData.LotNo, QRData.McNo, QRData.EmpNo + "| InputQty: " + QRData.InputQty);
-
-                classDataQRBindingSource.DataSource = QRData;
+                
 
                 labelStatus.Text = "Status : Lot Running";
                 buttonStart.Enabled = false;
                 buttonStart.BackgroundImage = test2.Properties.Resources.Start_gray;
                 buttonLotEnd.Enabled = true;
                 buttonLotEnd.BackgroundImage = test2.Properties.Resources.End_blue;
+                buttonCancelLot.Enabled = false;
             }
-           
+            //ShowData(QRData);
+            classDataQRBindingSource.ResetBindings(true);
+
 
 
         }
@@ -312,9 +313,6 @@ namespace test2
             DialogResult resultDatarecode = formDataRecord.ShowDialog();
             /////////goto emp end form ///////////////
             ///
-
-
-
             //check by webserv
             if (resultDatarecode == DialogResult.OK)
             {
@@ -335,7 +333,7 @@ namespace test2
                     // UpdateSqlData(QRData.McNo, QRData.LotNo, QRData.LotStart);
                     SaveXml(QRData, AppDomain.CurrentDomain.BaseDirectory + "/xmlData.txt"); //update binary file
                     ClassLog.SaveLog("Click Lot End Button", "Lot No.:" + QRData.LotNo, QRData.McNo, QRData.EmpNoEnd + "| Total Good " + QRData.TotalGood + "| Total NG " + QRData.TotalNg);
-                    ShowData(QRData);
+                    
 
                     labelStatus.Text = "Status : Wait Input Lot";
                     buttonLotEnd.Enabled = false;
@@ -344,7 +342,9 @@ namespace test2
                     button1.BackgroundImage = test2.Properties.Resources.input_blue;
                 }
             }
-            
+            // ShowData(QRData); 
+            classDataQRBindingSource.ResetBindings(true);
+
 
 
         }
@@ -493,6 +493,38 @@ namespace test2
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonCancelLot_Click(object sender, EventArgs e)
+        {
+            ClassLog.SaveLog("Click Cancel Lot Button", "Lot No.:" + QRData.LotNo, QRData.McNo, QRData.EmpNoEnd + "| Total Good " + QRData.TotalGood + "| Total NG " + QRData.TotalNg);
+
+            QRData.LotNo = null;
+            QRData.DeviceName = null;
+            QRData.PackageName = null;
+            QRData.LotSetting = null;//บันทึกค่าลง class
+            QRData.EmpNo = null;
+            QRData.InputQty = null;
+            QRData.LotStart = null;
+            QRData.LotClose = null;
+            QRData.TotalNg = null;
+            QRData.MarkerM = 0;
+            QRData.MarkerK = 0;
+            QRData.MekaNG = 0;
+            QRData.MissingIC = 0;
+
+            SaveXml(QRData, AppDomain.CurrentDomain.BaseDirectory + "/xmlData.txt"); //update binary file
+            
+            ShowData(QRData);
+
+
+            labelStatus.Text = "Status : Wait Input Lot";
+            buttonLotEnd.Enabled = false;
+            buttonLotEnd.BackgroundImage = test2.Properties.Resources.End_gray;
+            button1.Enabled = true;
+            button1.BackgroundImage = test2.Properties.Resources.input_blue;
+            buttonStart.Enabled = false;
+            buttonStart.BackgroundImage = test2.Properties.Resources.Start_gray;
         }
     }
 }
