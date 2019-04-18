@@ -78,18 +78,18 @@ namespace test2
                         DataQR.LotSetting = null;//บันทึกค่าลง class
                         DataQR.EmpNo = null;
                         DataQR.InputQty = null;
-
+                        DialogResult = DialogResult.No;
                     }
                     else
                     {
                         DataQR.Recipes = setupLot.Recipe;
                         SaveXml(DataQR, AppDomain.CurrentDomain.BaseDirectory + "/xmlData.txt"); //บันทึกข้อมูลลงไฟล์ไบนารี่
                         ClassLog.SaveLog("Click Setting Button", "Lot No.:" + DataQR.LotNo, DataQR.McNo, DataQR.EmpNo);
-                        
+                        DialogResult = DialogResult.OK;
 
                     }
 
-                    DialogResult = DialogResult.OK;
+                    
                     
                 }
             }

@@ -73,6 +73,16 @@ namespace test2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap arrow {
+            get {
+                object obj = ResourceManager.GetObject("arrow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap btnEntLong {
             get {
                 object obj = ResourceManager.GetObject("btnEntLong", resourceCulture);
@@ -333,6 +343,16 @@ namespace test2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap End_green {
+            get {
+                object obj = ResourceManager.GetObject("End_green", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap input_blue {
             get {
                 object obj = ResourceManager.GetObject("input_blue", resourceCulture);
@@ -346,6 +366,16 @@ namespace test2.Properties {
         internal static System.Drawing.Bitmap input_gray {
             get {
                 object obj = ResourceManager.GetObject("input_gray", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap input_green {
+            get {
+                object obj = ResourceManager.GetObject("input_green", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -836,6 +866,26 @@ namespace test2.Properties {
         internal static System.Drawing.Bitmap Start_gray {
             get {
                 object obj = ResourceManager.GetObject("Start_gray", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Start_green {
+            get {
+                object obj = ResourceManager.GetObject("Start_green", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Start_green1 {
+            get {
+                object obj = ResourceManager.GetObject("Start_green1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

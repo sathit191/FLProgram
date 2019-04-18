@@ -82,8 +82,9 @@
             this.mcNoToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.fillBy1ToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.fLDataTableAdapter = new test2.DBxDataSetTableAdapters.FLDataTableAdapter();
-            this.button2 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonCancelLot = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.panelNG = new System.Windows.Forms.Panel();
             this.textBoxIC = new System.Windows.Forms.TextBox();
             this.textBoxMekaNG = new System.Windows.Forms.TextBox();
@@ -99,6 +100,7 @@
             this.pMRepairingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fLDataBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.classDataQRBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -109,9 +111,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.fLDataBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dBxDataSet)).BeginInit();
             this.fillBy1ToolStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelNG.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fLDataBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.classDataQRBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -658,23 +662,21 @@
             // 
             this.fLDataTableAdapter.ClearBeforeFill = true;
             // 
-            // button2
+            // pictureBox1
             // 
-            this.button2.Location = new System.Drawing.Point(917, 75);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 44;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Visible = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            this.pictureBox1.Image = global::test2.Properties.Resources.arrow;
+            this.pictureBox1.Location = new System.Drawing.Point(256, 650);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(151, 51);
+            this.pictureBox1.TabIndex = 46;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Visible = false;
             // 
             // buttonCancelLot
             // 
             this.buttonCancelLot.BackColor = System.Drawing.Color.Transparent;
             this.buttonCancelLot.BackgroundImage = global::test2.Properties.Resources.cancellot_blue;
             this.buttonCancelLot.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonCancelLot.Enabled = false;
             this.buttonCancelLot.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCancelLot.ForeColor = System.Drawing.Color.Black;
             this.buttonCancelLot.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -683,7 +685,21 @@
             this.buttonCancelLot.Size = new System.Drawing.Size(135, 45);
             this.buttonCancelLot.TabIndex = 45;
             this.buttonCancelLot.UseVisualStyleBackColor = false;
+            this.buttonCancelLot.Visible = false;
             this.buttonCancelLot.Click += new System.EventHandler(this.buttonCancelLot_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackgroundImage = global::test2.Properties.Resources.Start_green1;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button2.Location = new System.Drawing.Point(917, 75);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 44;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Visible = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // panelNG
             // 
@@ -849,6 +865,16 @@
             // 
             this.fLDataBindingSource1.DataMember = "FLData";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::test2.Properties.Resources.arrow;
+            this.pictureBox2.Location = new System.Drawing.Point(589, 650);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(151, 51);
+            this.pictureBox2.TabIndex = 47;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Visible = false;
+            // 
             // classDataQRBindingSource
             // 
             this.classDataQRBindingSource.AllowNew = false;
@@ -860,6 +886,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1016, 740);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonCancelLot);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.fillBy1ToolStrip);
@@ -890,11 +918,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dBxDataSet)).EndInit();
             this.fillBy1ToolStrip.ResumeLayout(false);
             this.fillBy1ToolStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelNG.ResumeLayout(false);
             this.panelNG.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fLDataBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.classDataQRBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -976,6 +1006,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn totalNGDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button buttonCancelLot;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 

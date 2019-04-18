@@ -37,13 +37,16 @@ namespace test2
             {
 
                 //ShowData(QRData);
-                classDataQRBindingSource.ResetBindings(true);
+                //classDataQRBindingSource.ResetBindings(true);
+                classDataQRBindingSource.DataSource = QRData;
                 button1.BackgroundImage = test2.Properties.Resources.input_gray;
                 labelStatus.Text = "Status : Wait Start Lot";
                 button1.Enabled = false;
                 buttonStart.BackgroundImage = test2.Properties.Resources.Start_blue;
                 buttonStart.Enabled = true;
-                buttonCancelLot.Enabled = true;
+                buttonCancelLot.Visible = true;
+                pictureBox1.Visible = true;
+                pictureBox2.Visible = false;
             }
         }
 
@@ -71,7 +74,9 @@ namespace test2
                     labelStatus.Text = "Status : Wait Start Lot";
                     button1.Enabled = false;
                     button1.BackgroundImage = test2.Properties.Resources.input_gray;
-                    buttonCancelLot.Enabled = true;
+                    buttonCancelLot.Visible = true;
+                    pictureBox1.Visible = true;
+                    pictureBox2.Visible = false;
                 }
                 if (classData.LotStart.HasValue == true)
                 {
@@ -80,7 +85,9 @@ namespace test2
                     button1.Enabled = false;
                     button1.BackgroundImage = test2.Properties.Resources.input_gray;
                     buttonStart.BackgroundImage = test2.Properties.Resources.Start_gray;
-                    buttonCancelLot.Enabled = false;
+                    buttonCancelLot.Visible = false;
+                    pictureBox1.Visible = false;
+                    pictureBox2.Visible = true;
                 }
                 if (classData.LotClose.HasValue == true)
                 {
@@ -126,7 +133,9 @@ namespace test2
                 buttonStart.BackgroundImage = test2.Properties.Resources.Start_gray;
                 buttonLotEnd.Enabled = true;
                 buttonLotEnd.BackgroundImage = test2.Properties.Resources.End_blue;
-                buttonCancelLot.Enabled = false;
+                buttonCancelLot.Visible = false;
+                pictureBox1.Visible = false;
+                pictureBox2.Visible = true;
             }
             //ShowData(QRData);
             classDataQRBindingSource.ResetBindings(true);

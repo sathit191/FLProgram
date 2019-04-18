@@ -229,6 +229,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\arrow.gif" />
+    <None Include="Resources\Start_green.gif" />
+    <None Include="Resources\input_green.png" />
+    <None Include="Resources\End_green.png" />
+    <None Include="Resources\Start_green.png" />
     <None Include="Resources\cancellot_blue.png" />
     <None Include="Resources\btnSkyOK.png" />
     <None Include="Resources\btnSkyNG.png" />

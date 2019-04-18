@@ -154,14 +154,14 @@
   <data name="numC_bule1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\numC_bule.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btnSky0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnSky0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="btnSky3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnSky3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="numB_bule3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\numB_bule2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Start_green" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Start_green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnSkyNG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnSkyNG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="menubar_black1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\menubar_black1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -171,9 +171,6 @@
   </data>
   <data name="numOK_bule" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\numOK_bule.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btnSkyNG" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnSkyNG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="numNG_bule1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\numNG_bule1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -186,6 +183,9 @@
   </data>
   <data name="numOK_bule1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\numOK_bule.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cancellot_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cancellot_blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="num0_bule" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\num0_bule.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -238,11 +238,11 @@
   <data name="menubar3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\menubar3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btnSkyC" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnSkyC.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="btnSky8" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnSky8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="numA_bule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\numA_bule.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="btnEntLong1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnEntLong1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -259,8 +259,8 @@
   <data name="btnSky6" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnSky6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btnSky71" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnSky71.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="numB_bule3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\numB_bule2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="End_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\End_blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -279,6 +279,9 @@
   </data>
   <data name="numB_bule1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\numB_bule.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Start_green1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Start_green.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="numC_bule" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\numC_bule.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -304,20 +307,32 @@
   <data name="num9_bule1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\num9_bule1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="numDel_bule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\numDel_bule.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="input_green" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\input_green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="btnnum3_bule" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnnum3_bule.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="numDel_bule" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\numDel_bule.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnSky71" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnSky71.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="numpad" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\numpad.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="btnSky1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnSky1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="End_green" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\End_green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="num8_bule" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\num8_bule.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btnSky1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnSky1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnSky0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnSky0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="numNG_bule" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\numNG_bule.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -334,8 +349,8 @@
   <data name="num4_bule" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\num4_bule.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="numA_bule" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\numA_bule.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnSkyC" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnSkyC.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PictureBoxButtonLotEndGray" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PictureBoxButtonLotEndGray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -349,7 +364,7 @@
   <data name="NG" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cancellot_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cancellot_blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="arrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\arrow.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
