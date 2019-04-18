@@ -414,6 +414,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.panelNG);
             this.groupBox1.Controls.Add(this.label20);
             this.groupBox1.Controls.Add(this.label24);
@@ -677,9 +678,9 @@
             this.buttonCancelLot.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCancelLot.ForeColor = System.Drawing.Color.Black;
             this.buttonCancelLot.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonCancelLot.Location = new System.Drawing.Point(822, 104);
+            this.buttonCancelLot.Location = new System.Drawing.Point(857, 116);
             this.buttonCancelLot.Name = "buttonCancelLot";
-            this.buttonCancelLot.Size = new System.Drawing.Size(170, 50);
+            this.buttonCancelLot.Size = new System.Drawing.Size(135, 45);
             this.buttonCancelLot.TabIndex = 45;
             this.buttonCancelLot.UseVisualStyleBackColor = false;
             this.buttonCancelLot.Click += new System.EventHandler(this.buttonCancelLot_Click);
