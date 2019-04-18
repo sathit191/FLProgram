@@ -336,6 +336,8 @@ namespace test2
                     buttonLotEnd.BackgroundImage = test2.Properties.Resources.End_gray;
                     button1.Enabled = true;
                     button1.BackgroundImage = test2.Properties.Resources.input_blue;
+                    pictureBox2.Visible = false;
+
                 }
             }
             // ShowData(QRData); 
