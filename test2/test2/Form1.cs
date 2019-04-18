@@ -515,8 +515,8 @@ namespace test2
 
             SaveXml(QRData, AppDomain.CurrentDomain.BaseDirectory + "/xmlData.txt"); //update binary file
             
-            ShowData(QRData);
-
+           // ShowData(QRData);
+            classDataQRBindingSource.ResetBindings(true);
 
             labelStatus.Text = "Status : Wait Input Lot";
             buttonLotEnd.Enabled = false;
