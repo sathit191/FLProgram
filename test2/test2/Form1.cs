@@ -86,6 +86,7 @@ namespace test2
                     labelStatus.Text = "Status : Wait Start Lot";
                     button1.Enabled = false;
                     button1.BackgroundImage = test2.Properties.Resources.input_gray;
+                    buttonCancelLot.Enabled = true;
                 }
                 if (classData.LotStart.HasValue == true)
                 {
@@ -94,6 +95,7 @@ namespace test2
                     button1.Enabled = false;
                     button1.BackgroundImage = test2.Properties.Resources.input_gray;
                     buttonStart.BackgroundImage = test2.Properties.Resources.Start_gray;
+                    buttonCancelLot.Enabled = false;
                 }
                 if (classData.LotClose.HasValue == true)
                 {
@@ -497,7 +499,10 @@ namespace test2
 
         private void buttonCancelLot_Click(object sender, EventArgs e)
         {
-            ClassLog.SaveLog("Click Cancel Lot Button", "Lot No.:" + QRData.LotNo, QRData.McNo, QRData.EmpNoEnd + "| Total Good " + QRData.TotalGood + "| Total NG " + QRData.TotalNg);
+            FormEmpEnd formEmpEnd = new FormEmpEnd(QRData);
+            DialogResult result = formEmpEnd.ShowDialog();
+
+            ClassLog.SaveLog("Click Cancel Lot Button", "Lot No.:" + QRData.LotNo, QRData.McNo, QRData.EmpNoEnd);
 
             QRData.LotNo = null;
             QRData.DeviceName = null;

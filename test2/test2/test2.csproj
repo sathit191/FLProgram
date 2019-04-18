@@ -229,6 +229,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\cancellot_blue.png" />
     <None Include="Resources\btnSkyOK.png" />
     <None Include="Resources\btnSkyNG.png" />
     <None Include="Resources\btnSkyC.png" />
