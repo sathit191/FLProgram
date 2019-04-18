@@ -36,7 +36,8 @@ namespace test2
             if (result == DialogResult.OK) //เช็คค่า Dialog ที่รีเทินกลับมาว่า Ok หรือไม่ ***ถ้าปิดหน้าต่างฟอม2 จะไม่เข้า loop นี้
             {
 
-                ShowData(QRData);
+                //ShowData(QRData);
+                classDataQRBindingSource.ResetBindings(true);
                 button1.BackgroundImage = test2.Properties.Resources.input_gray;
                 labelStatus.Text = "Status : Wait Start Lot";
                 button1.Enabled = false;
@@ -44,28 +45,12 @@ namespace test2
                 buttonStart.Enabled = true;
                 buttonCancelLot.Enabled = true;
             }
-            //Cleartext();
-            //if (QRData.LotNo != null)
-            //{
-            //    // button1.BackColor = Color.Transparent;
-            //    button1.BackgroundImage = test2.Properties.Resources.input_gray;
-            //    labelStatus.Text = "Status : Wait Start Lot";
-            //    button1.Enabled = false;
-            //    buttonStart.BackColor = Color.DodgerBlue;
-            //    buttonStart.Enabled = true;
-            //}
         }
 
         private void ShowData(ClassDataQR dataQR)
         {
             classDataQRBindingSource.ResetBindings(true);
             classDataQRBindingSource.DataSource = QRData; //Binding data from class
-            //classDataQRBindingSource.
-            //if (QRData.LotStart.HasValue)
-            //{
-            //    labelLotStart.Text = QRData.LotStart.Value.ToString("dd/MM/yyyy HH:mm:ss");
-            //}
-            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -111,7 +96,7 @@ namespace test2
                 QRData = classData;
 
             }
-            ShowData(QRData);
+            classDataQRBindingSource.DataSource = QRData;
         }
 
         private void buttonStart_Click(object sender, EventArgs e)
