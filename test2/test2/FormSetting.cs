@@ -65,28 +65,33 @@ namespace test2
                     DataQR.MarkerK = 0;
                     DataQR.MekaNG = 0;
                     DataQR.MissingIC = 0;
-
-                    webService = new WebServiceAPCS.ServiceiLibraryClient(); //เช็คค่าจากเว็บ SV
-                    WebServiceAPCS.SetupLotResult setupLot = webService.SetupLot(DataQR.LotNo, DataQR.McNo, DataQR.EmpNo, Properties.Settings.Default.ProcessName, Properties.Settings.Default.LayNo);
-
-                    if (setupLot.IsPass == WebServiceAPCS.SetupLotResult.Status.NotPass)
+                    if (result == DialogResult.OK)
                     {
-                        MessageDialog.MessageBoxDialog.ShowMessageDialog("Input Lot", setupLot.Cause, setupLot.Type.ToString());
-                        DataQR.LotNo = null;
-                        DataQR.DeviceName = null;
-                        DataQR.PackageName = null;
-                        DataQR.LotSetting = null;//บันทึกค่าลง class
-                        DataQR.EmpNo = null;
-                        DataQR.InputQty = null;
+                        webService = new WebServiceAPCS.ServiceiLibraryClient(); //เช็คค่าจากเว็บ SV
+                        WebServiceAPCS.SetupLotResult setupLot = webService.SetupLot(DataQR.LotNo, DataQR.McNo, DataQR.EmpNo, Properties.Settings.Default.ProcessName, Properties.Settings.Default.LayNo);
+
+                        if (setupLot.IsPass == WebServiceAPCS.SetupLotResult.Status.NotPass)
+                        {
+                            MessageDialog.MessageBoxDialog.ShowMessageDialog("Input Lot", setupLot.Cause, setupLot.Type.ToString());
+                            DataQR.LotNo = null;
+                            DataQR.DeviceName = null;
+                            DataQR.PackageName = null;
+                            DataQR.LotSetting = null;//บันทึกค่าลง class
+                            DataQR.EmpNo = null;
+                            DataQR.InputQty = null;
+                            DialogResult = DialogResult.No;
+                        }
+                        else
+                        {
+                            DataQR.Recipes = setupLot.Recipe;
+                            SaveXml(DataQR, AppDomain.CurrentDomain.BaseDirectory + "/xmlData.txt"); //บันทึกข้อมูลลงไฟล์ไบนารี่
+                            ClassLog.SaveLog("Click Setting Button", "Lot No.:" + DataQR.LotNo, DataQR.McNo, DataQR.EmpNo);
+                            DialogResult = DialogResult.OK;
+
+                        }
+                    }else
+                    {
                         DialogResult = DialogResult.No;
-                    }
-                    else
-                    {
-                        DataQR.Recipes = setupLot.Recipe;
-                        SaveXml(DataQR, AppDomain.CurrentDomain.BaseDirectory + "/xmlData.txt"); //บันทึกข้อมูลลงไฟล์ไบนารี่
-                        ClassLog.SaveLog("Click Setting Button", "Lot No.:" + DataQR.LotNo, DataQR.McNo, DataQR.EmpNo);
-                        DialogResult = DialogResult.OK;
-
                     }
 
                     

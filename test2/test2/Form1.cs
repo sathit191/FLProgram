@@ -125,7 +125,7 @@ namespace test2
             }
             else
             {
-                InsertSqlData(labelLotNo.Text, labelMcNo.Text, DateTime.Now);
+                InsertSqlData(labelLotNo.Text, labelMcNo.Text, QRData.LotStart);
                 SaveXml(QRData, AppDomain.CurrentDomain.BaseDirectory + "/xmlData.txt");
                 ClassLog.SaveLog("Click Start Button", "Lot No.:" + QRData.LotNo, QRData.McNo, QRData.EmpNo + "| InputQty: " + QRData.InputQty);
                 
@@ -144,22 +144,33 @@ namespace test2
 
 
         }
-        private void UpdateSqlData(string mcNo, string lotNo , DateTime date)
+        private void UpdateSqlData(string mcNo, string lotNo , DateTime? date)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(Properties.Settings.Default.Dbxuser);
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "UPDATE FLData " +
-                                  "SET LotEndTime = @LotClose, TotalGood = @TotalGood,TotalNG=@TotalNG,MekaNG1 = @TotalNG,ActualMekaNG1 = @TotalNG," +
-                                  "MekaNGAdjust = @TotalNG,FrontMarkerNG = @FrontMarkerNG,FLMarkerNG = @FLMarkerNG , MissingIC = @MissingIC," +
-                                  "JigCheck = @JigCheck ,KanaCleanBeFore = @KanaCleanBeFore, KanaCleanAfter = @KanaCleanAfter, " +
-                                  "VisualCheckMode = @VisualCheckMode , VisualCheckAdjust = @VisualCheckAdjust, " +
-                                  "FirstShotCheckMode = @FirstShotCheckMode, FirstShotCheckModeAdjust = @FirstShotCheckModeAdjust" +
-                                  "WHERE LotNo = @LotNo AND McNo = @McNo AND LotStartTime = @LotStartTime";
+                cmd.CommandText = "UPDATE [dbo].[FLData]"+
+                                  "SET [TotalGood] = @TotalGood " +
+                                  ",[TotalNG] = @TotalNG " +
+                                  ",[LotEndTime] = @LotClose" +
+                                  ",[FrontMarkerNG] = @FrontMarkerNG" +
+                                  ",[FLMarkerNG] = @FLMarkerNG" +
+                                  ",[ActualMekaNG1] = @TotalNG " +
+                                  ",[MekaNG1] = @TotalNG" +
+                                  ",[MissingIC] = @MissingIC" +
+                                  ",[JigCheck] = @JigCheck" +
+                                  ",[KanaCleanBefore] = @KanaCleanBeFore" +
+                                  ",[KanaCleanAfter] = @KanaCleanAfter" +
+                                  ",[VisualCheckMode] = @VisualCheckMode" +
+                                  ",[VisualCheckAdjust] = @VisualCheckAdjust" +
+                                  ",[FirstShotCheckMode] = @FirstShotCheckMode" +
+                                  ",[FirstShotCheckModeAdjust] = @FirstShotCheckModeAdjust" +
+                                  ",[MekaNGAdjust] = @TotalNG " +
+                                  " WHERE LotNo = @LotNo AND McNo = @McNo AND LotStartTime = @LotStartTime";
                 cmd.Parameters.Add("@LotNo", SqlDbType.VarChar).Value = lotNo;
                 cmd.Parameters.Add("@McNo", SqlDbType.VarChar).Value = mcNo;
-                cmd.Parameters.Add("@LotStartTime", SqlDbType.VarChar).Value = date;
+                cmd.Parameters.Add("@LotStartTime", SqlDbType.DateTime).Value = QRData.LotStart;
                 //value//
                 cmd.Parameters.Add("@LotClose", SqlDbType.DateTime).Value = DateTime.Now;
                 cmd.Parameters.Add("@TotalGood", SqlDbType.VarChar).Value = QRData.TotalGood;
@@ -178,6 +189,7 @@ namespace test2
                 cmd.Connection.Open();
                 cmd.ExecuteNonQuery();
                 cmd.Connection.Close();
+
             }
         }
         private void SaveBinary(ClassDataQR qRData, string pathFile) // บันทึกข้อมูลลงไปในไฟล์ ไบนารี่
@@ -285,7 +297,9 @@ namespace test2
                 else
                 {
                     //update to database
-                    UpdateSqlData(QRData.McNo, QRData.LotNo,QRData.LotStart.Value);
+                    //DateTime date = DateTime.Parse("2019-04-19 10:03:26.203");
+                    //DateTime dateTime = QRData.LotStart.;
+                    UpdateSqlData(QRData.McNo, QRData.LotNo,QRData.LotStart);
                     SaveXml(QRData, AppDomain.CurrentDomain.BaseDirectory + "/xmlData.txt"); //update binary file
                     ClassLog.SaveLog("Click Lot End Button", "Lot No.:" + QRData.LotNo, QRData.McNo, QRData.EmpNoEnd + "| Total Good " + QRData.TotalGood + "| Total NG " + QRData.TotalNg);
                     
@@ -368,7 +382,7 @@ namespace test2
             Process.Start(@"C:\Windows\System32\osk.exe");
         }
 
-        private void InsertSqlData(string lotNo, string mcNo ,DateTime startLot)
+        private void InsertSqlData(string lotNo, string mcNo ,DateTime? startLot)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
