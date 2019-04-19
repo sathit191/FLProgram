@@ -296,9 +296,6 @@ namespace test2
                 }
                 else
                 {
-                    //update to database
-                    //DateTime date = DateTime.Parse("2019-04-19 10:03:26.203");
-                    //DateTime dateTime = QRData.LotStart.;
                     UpdateSqlData(QRData.McNo, QRData.LotNo,QRData.LotStart);
                     SaveXml(QRData, AppDomain.CurrentDomain.BaseDirectory + "/xmlData.txt"); //update binary file
                     ClassLog.SaveLog("Click Lot End Button", "Lot No.:" + QRData.LotNo, QRData.McNo, QRData.EmpNoEnd + "| Total Good " + QRData.TotalGood + "| Total NG " + QRData.TotalNg);
