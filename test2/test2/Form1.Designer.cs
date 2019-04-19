@@ -57,6 +57,11 @@
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panelNG = new System.Windows.Forms.Panel();
+            this.textBoxIC = new System.Windows.Forms.TextBox();
+            this.textBoxMekaNG = new System.Windows.Forms.TextBox();
+            this.textBoxK = new System.Windows.Forms.TextBox();
+            this.textBoxM = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label12 = new System.Windows.Forms.Label();
@@ -85,11 +90,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonCancelLot = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.panelNG = new System.Windows.Forms.Panel();
-            this.textBoxIC = new System.Windows.Forms.TextBox();
-            this.textBoxMekaNG = new System.Windows.Forms.TextBox();
-            this.textBoxK = new System.Windows.Forms.TextBox();
-            this.textBoxM = new System.Windows.Forms.TextBox();
             this.buttonLotEnd = new System.Windows.Forms.Button();
             this.buttonStart = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -103,6 +103,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.classDataQRBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
+            this.panelNG.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -112,7 +113,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dBxDataSet)).BeginInit();
             this.fillBy1ToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panelNG.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fLDataBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -440,6 +440,66 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = ": Operation :";
             // 
+            // panelNG
+            // 
+            this.panelNG.BackColor = System.Drawing.Color.Transparent;
+            this.panelNG.BackgroundImage = global::test2.Properties.Resources.NG;
+            this.panelNG.Controls.Add(this.textBoxIC);
+            this.panelNG.Controls.Add(this.textBoxMekaNG);
+            this.panelNG.Controls.Add(this.textBoxK);
+            this.panelNG.Controls.Add(this.textBoxM);
+            this.panelNG.Location = new System.Drawing.Point(83, 302);
+            this.panelNG.Name = "panelNG";
+            this.panelNG.Size = new System.Drawing.Size(300, 100);
+            this.panelNG.TabIndex = 35;
+            // 
+            // textBoxIC
+            // 
+            this.textBoxIC.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.classDataQRBindingSource, "MissingIC", true));
+            this.textBoxIC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxIC.ForeColor = System.Drawing.Color.Black;
+            this.textBoxIC.Location = new System.Drawing.Point(256, 62);
+            this.textBoxIC.Name = "textBoxIC";
+            this.textBoxIC.ReadOnly = true;
+            this.textBoxIC.Size = new System.Drawing.Size(30, 26);
+            this.textBoxIC.TabIndex = 10;
+            this.textBoxIC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBoxMekaNG
+            // 
+            this.textBoxMekaNG.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.classDataQRBindingSource, "MekaNG", true));
+            this.textBoxMekaNG.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxMekaNG.ForeColor = System.Drawing.Color.Black;
+            this.textBoxMekaNG.Location = new System.Drawing.Point(243, 10);
+            this.textBoxMekaNG.Name = "textBoxMekaNG";
+            this.textBoxMekaNG.Size = new System.Drawing.Size(30, 26);
+            this.textBoxMekaNG.TabIndex = 9;
+            this.textBoxMekaNG.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBoxK
+            // 
+            this.textBoxK.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.classDataQRBindingSource, "MarkerK", true));
+            this.textBoxK.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxK.ForeColor = System.Drawing.Color.Black;
+            this.textBoxK.Location = new System.Drawing.Point(97, 66);
+            this.textBoxK.Name = "textBoxK";
+            this.textBoxK.ReadOnly = true;
+            this.textBoxK.Size = new System.Drawing.Size(30, 26);
+            this.textBoxK.TabIndex = 4;
+            this.textBoxK.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBoxM
+            // 
+            this.textBoxM.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.classDataQRBindingSource, "MarkerM", true));
+            this.textBoxM.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxM.ForeColor = System.Drawing.Color.Black;
+            this.textBoxM.Location = new System.Drawing.Point(21, 66);
+            this.textBoxM.Name = "textBoxM";
+            this.textBoxM.ReadOnly = true;
+            this.textBoxM.Size = new System.Drawing.Size(30, 26);
+            this.textBoxM.TabIndex = 3;
+            this.textBoxM.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
@@ -665,7 +725,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::test2.Properties.Resources.arrow;
-            this.pictureBox1.Location = new System.Drawing.Point(256, 650);
+            this.pictureBox1.Location = new System.Drawing.Point(256, 649);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(151, 51);
             this.pictureBox1.TabIndex = 46;
@@ -701,67 +761,6 @@
             this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
-            // panelNG
-            // 
-            this.panelNG.BackColor = System.Drawing.Color.Transparent;
-            this.panelNG.BackgroundImage = global::test2.Properties.Resources.NG;
-            this.panelNG.Controls.Add(this.textBoxIC);
-            this.panelNG.Controls.Add(this.textBoxMekaNG);
-            this.panelNG.Controls.Add(this.textBoxK);
-            this.panelNG.Controls.Add(this.textBoxM);
-            this.panelNG.Location = new System.Drawing.Point(83, 302);
-            this.panelNG.Name = "panelNG";
-            this.panelNG.Size = new System.Drawing.Size(300, 100);
-            this.panelNG.TabIndex = 35;
-            // 
-            // textBoxIC
-            // 
-            this.textBoxIC.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.classDataQRBindingSource, "MissingIC", true));
-            this.textBoxIC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxIC.ForeColor = System.Drawing.Color.Black;
-            this.textBoxIC.Location = new System.Drawing.Point(256, 62);
-            this.textBoxIC.Name = "textBoxIC";
-            this.textBoxIC.ReadOnly = true;
-            this.textBoxIC.Size = new System.Drawing.Size(30, 26);
-            this.textBoxIC.TabIndex = 10;
-            this.textBoxIC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBoxMekaNG
-            // 
-            this.textBoxMekaNG.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.classDataQRBindingSource, "MekaNG", true));
-            this.textBoxMekaNG.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxMekaNG.ForeColor = System.Drawing.Color.Black;
-            this.textBoxMekaNG.Location = new System.Drawing.Point(243, 10);
-            this.textBoxMekaNG.Name = "textBoxMekaNG";
-            this.textBoxMekaNG.ReadOnly = true;
-            this.textBoxMekaNG.Size = new System.Drawing.Size(30, 26);
-            this.textBoxMekaNG.TabIndex = 9;
-            this.textBoxMekaNG.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBoxK
-            // 
-            this.textBoxK.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.classDataQRBindingSource, "MarkerK", true));
-            this.textBoxK.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxK.ForeColor = System.Drawing.Color.Black;
-            this.textBoxK.Location = new System.Drawing.Point(97, 66);
-            this.textBoxK.Name = "textBoxK";
-            this.textBoxK.ReadOnly = true;
-            this.textBoxK.Size = new System.Drawing.Size(30, 26);
-            this.textBoxK.TabIndex = 4;
-            this.textBoxK.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBoxM
-            // 
-            this.textBoxM.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.classDataQRBindingSource, "MarkerM", true));
-            this.textBoxM.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxM.ForeColor = System.Drawing.Color.Black;
-            this.textBoxM.Location = new System.Drawing.Point(21, 66);
-            this.textBoxM.Name = "textBoxM";
-            this.textBoxM.ReadOnly = true;
-            this.textBoxM.Size = new System.Drawing.Size(30, 26);
-            this.textBoxM.TabIndex = 3;
-            this.textBoxM.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // buttonLotEnd
             // 
             this.buttonLotEnd.BackColor = System.Drawing.Color.Transparent;
@@ -770,7 +769,7 @@
             this.buttonLotEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLotEnd.ForeColor = System.Drawing.Color.White;
             this.buttonLotEnd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonLotEnd.Location = new System.Drawing.Point(744, 650);
+            this.buttonLotEnd.Location = new System.Drawing.Point(746, 650);
             this.buttonLotEnd.Name = "buttonLotEnd";
             this.buttonLotEnd.Size = new System.Drawing.Size(170, 50);
             this.buttonLotEnd.TabIndex = 36;
@@ -868,7 +867,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::test2.Properties.Resources.arrow;
-            this.pictureBox2.Location = new System.Drawing.Point(589, 650);
+            this.pictureBox2.Location = new System.Drawing.Point(589, 649);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(151, 51);
             this.pictureBox2.TabIndex = 47;
@@ -908,6 +907,8 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panelNG.ResumeLayout(false);
+            this.panelNG.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
@@ -919,8 +920,6 @@
             this.fillBy1ToolStrip.ResumeLayout(false);
             this.fillBy1ToolStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panelNG.ResumeLayout(false);
-            this.panelNG.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fLDataBindingSource1)).EndInit();
