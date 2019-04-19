@@ -98,6 +98,8 @@ namespace test2
                     buttonLotEnd.BackgroundImage = test2.Properties.Resources.End_gray;
                     button1.Enabled = true;
                     button1.BackgroundImage = test2.Properties.Resources.input_blue;
+                    pictureBox1.Visible = false;
+                    pictureBox2.Visible = false;
                     return;
                 }
                 QRData = classData;
@@ -112,18 +114,18 @@ namespace test2
             QRData.LotStart = DateTime.Now;
             QRData.Recipes = textBoxRecipes.Text;
 
-            // InsertSqlData(labelLotNo.Text, labelMcNo.Text,DateTime.Now);
+            
             webService = new WebServiceAPCS.ServiceiLibraryClient(); //เช็คค่าจากเว็บ SV
             WebServiceAPCS.StartLotResult startLot = webService.StartLot(QRData.LotNo, QRData.McNo, QRData.EmpNo, QRData.Recipes);
 
             if (startLot.IsPass == false)
             {
-                //MessageDialog.MessageBoxDialog.ShowMessageDialog("Input Lot", setupLot.Cause, setupLot.Type.ToString());
                 MessageDialog.MessageBoxDialog.ShowMessageDialog("Start Lot", startLot.Cause, startLot.Type.ToString());
                 return;
             }
             else
             {
+                InsertSqlData(labelLotNo.Text, labelMcNo.Text, DateTime.Now);
                 SaveXml(QRData, AppDomain.CurrentDomain.BaseDirectory + "/xmlData.txt");
                 ClassLog.SaveLog("Click Start Button", "Lot No.:" + QRData.LotNo, QRData.McNo, QRData.EmpNo + "| InputQty: " + QRData.InputQty);
                 
@@ -137,7 +139,6 @@ namespace test2
                 pictureBox1.Visible = false;
                 pictureBox2.Visible = true;
             }
-            //ShowData(QRData);
             classDataQRBindingSource.ResetBindings(true);
 
 
@@ -150,14 +151,30 @@ namespace test2
                 cmd.Connection = new SqlConnection(Properties.Settings.Default.Dbxuser);
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = "UPDATE FLData " +
-                                  "SET LotEndTime = @LotClose, TotalGood = @TotalGood,MekaNG1 = @TotalNG,ActualMekaNG1 = @TotalNG,MekaNGAdjust = @TotalNG " +
+                                  "SET LotEndTime = @LotClose, TotalGood = @TotalGood,TotalNG=@TotalNG,MekaNG1 = @TotalNG,ActualMekaNG1 = @TotalNG," +
+                                  "MekaNGAdjust = @TotalNG,FrontMarkerNG = @FrontMarkerNG,FLMarkerNG = @FLMarkerNG , MissingIC = @MissingIC," +
+                                  "JigCheck = @JigCheck ,KanaCleanBeFore = @KanaCleanBeFore, KanaCleanAfter = @KanaCleanAfter, " +
+                                  "VisualCheckMode = @VisualCheckMode , VisualCheckAdjust = @VisualCheckAdjust, " +
+                                  "FirstShotCheckMode = @FirstShotCheckMode, FirstShotCheckModeAdjust = @FirstShotCheckModeAdjust" +
                                   "WHERE LotNo = @LotNo AND McNo = @McNo AND LotStartTime = @LotStartTime";
                 cmd.Parameters.Add("@LotNo", SqlDbType.VarChar).Value = lotNo;
                 cmd.Parameters.Add("@McNo", SqlDbType.VarChar).Value = mcNo;
                 cmd.Parameters.Add("@LotStartTime", SqlDbType.VarChar).Value = date;
+                //value//
                 cmd.Parameters.Add("@LotClose", SqlDbType.DateTime).Value = DateTime.Now;
                 cmd.Parameters.Add("@TotalGood", SqlDbType.VarChar).Value = QRData.TotalGood;
                 cmd.Parameters.Add("@TotalNG", SqlDbType.VarChar).Value = QRData.TotalNg;
+                cmd.Parameters.Add("@FrontMarkerNG", SqlDbType.VarChar).Value = QRData.MarkerM;
+                cmd.Parameters.Add("@FLMarkerNG", SqlDbType.VarChar).Value = QRData.MarkerK;
+                cmd.Parameters.Add("@MissingIC", SqlDbType.VarChar).Value = QRData.MissingIC;
+                cmd.Parameters.Add("@JigCheck", SqlDbType.VarChar).Value = QRData.JigCheck;
+                cmd.Parameters.Add("@KanaCleanBeFore", SqlDbType.VarChar).Value = QRData.KanagataBefore;
+                cmd.Parameters.Add("@KanaCleanAfter", SqlDbType.VarChar).Value = QRData.KanagataAfter;
+                cmd.Parameters.Add("@VisualCheckMode", SqlDbType.VarChar).Value = QRData.VisualCheck;
+                cmd.Parameters.Add("@VisualCheckAdjust", SqlDbType.VarChar).Value = QRData.VisualAdjust;
+                cmd.Parameters.Add("@FirstShotCheckMode", SqlDbType.VarChar).Value = QRData.OneShotKanagata;
+                cmd.Parameters.Add("@FirstShotCheckModeAdjust", SqlDbType.VarChar).Value = QRData.OneShotAdjust;
+                cmd.Parameters.Add("@EmpNoEnd", SqlDbType.VarChar).Value = QRData.EmpNoEnd;
                 cmd.Connection.Open();
                 cmd.ExecuteNonQuery();
                 cmd.Connection.Close();
@@ -205,7 +222,6 @@ namespace test2
 
         private void button2_Click(object sender, EventArgs e)
         {
-
             ClassDataQR classData = LoadXml(AppDomain.CurrentDomain.BaseDirectory + "/xmlData.txt");
            // ClassLog.SaveLog("Click Restore Lot Button", "Lot No.:" + classData.LotNo, classData.EmpNo);
             if (classData.LotStart.HasValue == true )
@@ -246,65 +262,6 @@ namespace test2
 
         private void buttonLotEnd_Click(object sender, EventArgs e)
         {
-            //int num;
-            //if (textBoxTotalNG.Text == null || textBoxTotalNG.Text == "")
-            //{
-            //    MessageBox.Show("Please Input Total NG");
-            //    textBoxTotalNG.Focus();
-            //    return;
-            //}
-            //if (textBoxM.Text == null || textBoxM.Text =="")
-            //{
-            //    MessageBox.Show("Please Input Marker M");
-            //    textBoxM.Focus();
-            //    return;
-            //}else if (!int.TryParse(textBoxM.Text,out num)) // chk num
-            //{
-            //    MessageBox.Show("Please Input numeral");
-            //    textBoxM.Focus();
-            //}
-            //if (textBoxK.Text == null || textBoxK.Text == "")
-            //{
-            //    MessageBox.Show("Please Input Marker K");
-            //    textBoxK.Focus();
-            //    return;
-            //}else if (!int.TryParse(textBoxK.Text, out num)) // chk num
-            //{
-            //    MessageBox.Show("Please Input numeral");
-            //    textBoxK.Focus();
-            //    return;
-            //}
-            //if (textBoxMekaNG.Text == null || textBoxMekaNG.Text == "")
-            //{
-            //    MessageBox.Show("Please Input Meka NG");
-            //    textBoxMekaNG.Focus();
-            //    return;
-            //}else if (!int.TryParse(textBoxMekaNG.Text, out num)) // chk num
-            //{
-            //    MessageBox.Show("Please Input numeral");
-            //    textBoxMekaNG.Focus();
-            //    return;
-            //}
-            //if (textBoxIC.Text == null || textBoxIC.Text == "")
-            //{
-            //    MessageBox.Show("Please Input Meka IC");
-            //    textBoxIC.Focus();
-            //    return;
-            //}else if (!int.TryParse(textBoxIC.Text, out num)) // chk num
-            //{
-            //    MessageBox.Show("Please Input numeral");
-            //    textBoxIC.Focus();
-            //    return;
-            //}
-            //QRData.TotalGood = labelTotalGood.Text;
-            //QRData.TotalNg = textBoxTotalNG.Text;
-            //QRData.LotClose = DateTime.Now;
-            //QRData.MarkerM = int.Parse(textBoxM.Text.Trim());
-            //QRData.MarkerM = int.Parse(textBoxK.Text.Trim());
-            //QRData.MakeNG = int.Parse(textBoxMekaNG.Text.Trim());
-            //QRData.MissingIC = int.Parse(textBoxIC.Text.Trim());
-            ////////////go to formdatarecode ///////////////
-
             FormDataRecord formDataRecord = new FormDataRecord(QRData);
             DialogResult resultDatarecode = formDataRecord.ShowDialog();
             /////////goto emp end form ///////////////
@@ -314,8 +271,10 @@ namespace test2
             {
                 QRData.LotClose = DateTime.Now;
                 webService = new WebServiceAPCS.ServiceiLibraryClient();
+
                 int good = int.Parse(QRData.TotalGood);
                 int ng = int.Parse(QRData.TotalNg);
+
                 WebServiceAPCS.EndLotResult endLot = webService.EndLot(QRData.LotNo, QRData.McNo, QRData.EmpNoEnd, good, ng);
 
                 if (endLot.IsPass == false)
@@ -326,7 +285,7 @@ namespace test2
                 else
                 {
                     //update to database
-                    // UpdateSqlData(QRData.McNo, QRData.LotNo, QRData.LotStart);
+                    UpdateSqlData(QRData.McNo, QRData.LotNo,QRData.LotStart.Value);
                     SaveXml(QRData, AppDomain.CurrentDomain.BaseDirectory + "/xmlData.txt"); //update binary file
                     ClassLog.SaveLog("Click Lot End Button", "Lot No.:" + QRData.LotNo, QRData.McNo, QRData.EmpNoEnd + "| Total Good " + QRData.TotalGood + "| Total NG " + QRData.TotalNg);
                     
@@ -416,14 +375,12 @@ namespace test2
                 //cmd.Connection = new SqlConnection(ConfigurationManager.AppSettings["Dbxuser"]);
                 cmd.Connection = new SqlConnection(Properties.Settings.Default.Dbxuser);
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "INSERT INTO [dbo].[FTData] " +
+                cmd.CommandText = "INSERT INTO [dbo].[FLData] " +
                                   "([MCNo],[LotNo],[LotStartTime],[McType],[OPNo],[InputQty]) " +
-                                  "VALUES (@MCNo,@LotNo,@StartTime,@McType,@EmpNo@InputQty)"; /// 
+                                  "VALUES (@MCNo,@LotNo,@StartTime,@McType,@EmpNo,@InputQty)"; /// 
                 cmd.Parameters.Add("@MCNo", SqlDbType.VarChar).Value = mcNo;
                 cmd.Parameters.Add("@LotNo", SqlDbType.VarChar).Value = lotNo;
                 cmd.Parameters.Add("@McType", SqlDbType.VarChar).Value = QRData.McType;
-              //  cmd.Parameters.Add("@Package", SqlDbType.VarChar).Value = QRData.PackageName;
-              //  cmd.Parameters.Add("@Recipes", SqlDbType.VarChar).Value = QRData.Recipes;
                 cmd.Parameters.Add("@InputQty", SqlDbType.VarChar).Value = QRData.InputQty;
                 cmd.Parameters.Add("@EmpNo", SqlDbType.VarChar).Value = QRData.EmpNo;
                 cmd.Parameters.Add("@StartTime", SqlDbType.DateTime).Value = startLot;
@@ -497,35 +454,48 @@ namespace test2
         {
             FormEmpEnd formEmpEnd = new FormEmpEnd(QRData);
             DialogResult result = formEmpEnd.ShowDialog();
+            //WebServiceAPCS.EndLotResult endLot = webService.EndLot(QRData.LotNo, QRData.McNo, QRData.EmpNoEnd, good, ng);
+            if (result == DialogResult.OK)
+            {
+                webService = new WebServiceAPCS.ServiceiLibraryClient();
+                WebServiceAPCS.CancelLotResult cancelLot = webService.CancelLot(QRData.McNo, QRData.LotNo, QRData.EmpNoEnd);
+                if (cancelLot.IsPass == false)
+                {
+                    MessageDialog.MessageBoxDialog.ShowMessageDialog("End Lot", cancelLot.Cause, cancelLot.Type.ToString()); //setupLot.Cause, setupLot.Type.ToString()
+                    return;
+                }
+                else
+                {
+                    ClassLog.SaveLog("Click Cancel Lot Button", "Lot No.:" + QRData.LotNo, QRData.McNo, QRData.EmpNoEnd);
 
-            ClassLog.SaveLog("Click Cancel Lot Button", "Lot No.:" + QRData.LotNo, QRData.McNo, QRData.EmpNoEnd);
+                    QRData.LotNo = null;
+                    QRData.DeviceName = null;
+                    QRData.PackageName = null;
+                    QRData.LotSetting = null;//บันทึกค่าลง class
+                    QRData.EmpNo = null;
+                    QRData.InputQty = null;
+                    QRData.LotStart = null;
+                    QRData.LotClose = null;
+                    QRData.TotalNg = null;
+                    QRData.MarkerM = 0;
+                    QRData.MarkerK = 0;
+                    QRData.MekaNG = 0;
+                    QRData.MissingIC = 0;
 
-            QRData.LotNo = null;
-            QRData.DeviceName = null;
-            QRData.PackageName = null;
-            QRData.LotSetting = null;//บันทึกค่าลง class
-            QRData.EmpNo = null;
-            QRData.InputQty = null;
-            QRData.LotStart = null;
-            QRData.LotClose = null;
-            QRData.TotalNg = null;
-            QRData.MarkerM = 0;
-            QRData.MarkerK = 0;
-            QRData.MekaNG = 0;
-            QRData.MissingIC = 0;
+                    SaveXml(QRData, AppDomain.CurrentDomain.BaseDirectory + "/xmlData.txt"); //update binary file
 
-            SaveXml(QRData, AppDomain.CurrentDomain.BaseDirectory + "/xmlData.txt"); //update binary file
-            
-           // ShowData(QRData);
-            classDataQRBindingSource.ResetBindings(true);
+                    // ShowData(QRData);
+                    classDataQRBindingSource.ResetBindings(true);
 
-            labelStatus.Text = "Status : Wait Input Lot";
-            buttonLotEnd.Enabled = false;
-            buttonLotEnd.BackgroundImage = test2.Properties.Resources.End_gray;
-            button1.Enabled = true;
-            button1.BackgroundImage = test2.Properties.Resources.input_blue;
-            buttonStart.Enabled = false;
-            buttonStart.BackgroundImage = test2.Properties.Resources.Start_gray;
+                    labelStatus.Text = "Status : Wait Input Lot";
+                    buttonLotEnd.Enabled = false;
+                    buttonLotEnd.BackgroundImage = test2.Properties.Resources.End_gray;
+                    button1.Enabled = true;
+                    button1.BackgroundImage = test2.Properties.Resources.input_blue;
+                    buttonStart.Enabled = false;
+                    buttonStart.BackgroundImage = test2.Properties.Resources.Start_gray;
+                }
+            }
         }
     }
 }
