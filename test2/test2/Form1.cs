@@ -38,7 +38,7 @@ namespace test2
 
                 //ShowData(QRData);
                 //classDataQRBindingSource.ResetBindings(true);
-                classDataQRBindingSource.DataSource = QRData;
+               // classDataQRBindingSource.DataSource = QRData;
                 button1.BackgroundImage = test2.Properties.Resources.input_gray;
                 labelStatus.Text = "Status : Wait Start Lot";
                 button1.Enabled = false;
@@ -58,6 +58,7 @@ namespace test2
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //classDataQRBindingSource.DataSource = QRData;
             // TODO: This line of code loads data into the 'dBxDataSet.FLData' table. You can move, or remove it, as needed.
             this.fLDataTableAdapter.FillBy1(this.dBxDataSet.FLData, Properties.Settings.Default.McNo);
             labelVer.Text = Properties.Settings.Default.Version;
@@ -139,7 +140,7 @@ namespace test2
                 pictureBox1.Visible = false;
                 pictureBox2.Visible = true;
             }
-            classDataQRBindingSource.ResetBindings(true);
+           // classDataQRBindingSource.ResetBindings(true);
 
 
 
@@ -311,7 +312,7 @@ namespace test2
                 }
             }
             // ShowData(QRData); 
-            classDataQRBindingSource.ResetBindings(true);
+            //classDataQRBindingSource.ResetBindings(true);
 
 
 
@@ -496,7 +497,7 @@ namespace test2
                     SaveXml(QRData, AppDomain.CurrentDomain.BaseDirectory + "/xmlData.txt"); //update binary file
 
                     // ShowData(QRData);
-                    classDataQRBindingSource.ResetBindings(true);
+                    //classDataQRBindingSource.ResetBindings(true);
 
                     labelStatus.Text = "Status : Wait Input Lot";
                     buttonLotEnd.Enabled = false;

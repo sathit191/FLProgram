@@ -101,8 +101,8 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fLDataBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.classDataQRBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label4 = new System.Windows.Forms.Label();
+            this.classDataQRBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             this.panelNG.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -234,7 +234,7 @@
             // labelLotNo
             // 
             this.labelLotNo.AutoSize = true;
-            this.labelLotNo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.classDataQRBindingSource, "LotNo", true));
+            this.labelLotNo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.classDataQRBindingSource, "LotNo", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.labelLotNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLotNo.ForeColor = System.Drawing.Color.Black;
             this.labelLotNo.Location = new System.Drawing.Point(162, 53);
@@ -875,11 +875,6 @@
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Visible = false;
             // 
-            // classDataQRBindingSource
-            // 
-            this.classDataQRBindingSource.AllowNew = false;
-            this.classDataQRBindingSource.DataSource = typeof(test2.ClassDataQR);
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -890,6 +885,11 @@
             this.label4.Size = new System.Drawing.Size(29, 13);
             this.label4.TabIndex = 48;
             this.label4.Text = "-OO-";
+            // 
+            // classDataQRBindingSource
+            // 
+            this.classDataQRBindingSource.AllowNew = false;
+            this.classDataQRBindingSource.DataSource = typeof(test2.ClassDataQR);
             // 
             // Form1
             // 
